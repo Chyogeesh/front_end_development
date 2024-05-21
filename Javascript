@@ -1,0 +1,26 @@
+// Import GSAP library
+import gsap from 'gsap';
+
+// Create a timeline for the animation
+const animationTimeline = gsap.timeline();
+
+// Animate the hero image on scroll
+animationTimeline.to('.hero-image', {
+  duration: 2,
+  y: 50, // Move the image down by 50px
+  ease: 'power3.inOut',
+});
+
+// Animate text typing effect
+animationTimeline.to('.typed-text', {
+  duration: 3,
+  text: 'This is a typed text animation!',
+  ease: 'none',
+});
+
+// Trigger animations on scroll or user interaction (replace with your logic)
+window.addEventListener('scroll', () => {
+  if (isHeroSectionVisible()) { // Check if hero section is in viewport
+    animationTimeline.play();
+  }
+});
